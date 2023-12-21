@@ -1,21 +1,26 @@
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1" /> 
 <div class="container">
-        
+    <div id="myGrid"></div>
         <div class="row" style="padding-top: 10px;">
-            <div class="col-sm-3"> 
+            <div class="col-sm-2"> 
                 <label style="padding: 8px;color: blue;font-size: large;">Selection page</label>
             </div>
-            <div class="col-sm-3" style="display: inline-flex;"> 
+            <div class="col-sm-2" style="display: inline-flex;"> 
             <label style="padding: 8px;">Players:</label>
-            <input type="number" id="topplayers" style="width: 100px;" min="1" class="form-control" onchange="topoutoff()" value="11">
-            </div>
-            <div class="col-sm-3" style="display: inline-flex;"> 
+            <input type="number" id="topplayers"  style="width: 100px;" min="1" class="form-control"  value="11">
+            <label style="padding: 8px;display: none" id="topplayersi"></label>
+        </div>
+            <div class="col-sm-2" style="display: inline-flex;"> 
                 <label style="padding: 8px;">Overs:</label>
-                <input type="number"  id="overs" style="width: 100px;" min="1"  class="form-control" onchange="oversoff()" value="10">
+                <input type="number"  id="overs" style="width: 100px;" min="1"  class="form-control"  value="10">
+                <label style="padding: 8px;display: none" id="oversi"></label>
             </div>
-            <div class="col-sm-3"> 
-                <button class="btn btn-success dropdown-toggle"  type="button" onclick="proceed()">Proceed</button>
+            <div class="col-sm-2"> 
+                <button class="btn btn-primary dropdown-toggle" id="gocheck" type="button" onclick="gocheck()">GO TO</button>
+            </div>
+            <div class="col-sm-2"> 
+                <button class="btn btn-success dropdown-toggle" id="proceed" style="display: none;" type="button" onclick="proceed()">Proceed</button>
             </div>  
         </div>
     <div class="row">
@@ -39,10 +44,11 @@
                         <img id="senior" src= "asenior.jpg" width="20" height="15"> Team Senior</a> </li>
                  </ul>
               </div> 
-            <table class="table" style="width:auto;">
+            <table class="table" class="table1" style="width:auto;">
                 <thead>
                     <tr>
-                        <th> PlayerId</th>
+                        <th> Select</th>
+                        <th> PId</th>
                         <th>Player Name</th>
                         <th> Player Details </th>
                         <th> Action </th>
@@ -73,10 +79,12 @@
                         <img id="senior" src= "asenior.jpg" width="20" height="15"> Team Senior</a> </li>
                  </ul>
               </div> 
-            <table class="table" style="width:auto;">
+            <table class="table" class="table2" style="width:auto;">
                 <thead>
+                    
                     <tr>
-                        <th> PlayerId</th>
+                        <th> Select</th>
+                        <th> PId</th>
                         <th>Player Name</th>
                         <th> Player Details </th>
                         <th> Action </th>
@@ -94,14 +102,12 @@
 
 <script src="selection.js"></script>
 
-<link href="style.css" type="text/css" rel="stylesheet" />
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
 </html>
 <style>
 
@@ -135,6 +141,7 @@
         } 
   
         .dropdown { 
+            visibility: hidden;
             position: relative; 
             display: inline-block; 
             margin: 8px;
@@ -169,5 +176,14 @@
         .dropdown-menu>li>a {
             font-size: large;
             padding-left: 10px;
+        }
+        input[type=checkbox], input[type=radio] {
+            margin-left: 15px;
+            height: 17px;
+            width: 30px;
+            cursor: pointer;
+        }
+        .pnames{
+            width: 200px;
         }
 </style>
