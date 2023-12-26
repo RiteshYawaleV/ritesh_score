@@ -430,6 +430,14 @@ function forallchange(score1,wickets1,overs1,num,ext,byes,lbyes,noballf,extras1)
         $("#startbat").attr('disabled',true)
         $("#startbowl").attr('disabled',true)
         $('#second').hide();
+        $('#zero').attr('disabled',true);
+        $('#one').attr('disabled',true);
+        $('#two').attr('disabled',true);
+        $('#three').attr('disabled',true);
+        $('#four').attr('disabled',true);
+        $('#five').attr('disabled',true);
+        $('#six').attr('disabled',true);
+        $('#undo').attr('disabled',true);
     }
     
     // end of innings 
