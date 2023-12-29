@@ -333,6 +333,7 @@ function proceed() {
             sessionStorage.setItem('flag1',flag1);
             sessionStorage.setItem('flag2',flag2);
             sessionStorage.setItem('noball',$( "#noball option:selected" ).text());
+            sessionStorage.setItem('lastman',$( "#lastman option:selected" ).text());
             window.location.href = 'scoreboard.html';
     }
     else{
